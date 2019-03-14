@@ -8,14 +8,21 @@
 </head>
 <body>
 <biotea-bioschemas-showcase 
-  render pmcid="35353" 
-  annpath="./PMC35353_pubannotations.json" 
-  pmcpath="./PMC35353.nxml">
+  render>
 </biotea-bioschemas-showcase>
 
 <script src="../dist/BioteaBioschemasMetadata.js" charset="utf-8" defer></script>
 <script src="../dist/BioteaBioschemasAnnotations.js" charset="utf-8" defer></script>
 <script src="../dist/BioteaBioschemasShowcase.js" charset="utf-8" defer></script>
 
+<script>
+  window.onload = () => {
+    const component = document.getElementsByTagName('biotea-bioschemas-showcase')[0];
+    component.pmcid="35353" 
+    component.annpath="./PMC35353_pubannotations.json" 
+    component.pmcpath="./PMC35353.nxml"
+    component.parseData();
+  }
+</script>
 </body>
 </html>

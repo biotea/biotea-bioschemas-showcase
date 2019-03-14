@@ -38,13 +38,19 @@ class BioteaBioschemasShowcase extends HTMLElement  {
         return (this.getAttribute("pmcid"));
     }
 
-    attributeChangedCallback(attrName, oldVal, newVal) {}
-
-    connectedCallback() {
-        this._parseData();
+    set annpath(value) {
+        this.setAttribute("annpath", value);
     }
 
-    _parseData() {
+    set pmcpath(value) {
+        this.setAttribute("pmcpath", value);
+    }
+
+    set pmcid(value) {
+        this.setAttribute("pmcid", value);
+    }
+
+    parseData() {
         const metadata = this._createMetadata();
 
         metadata.addEventListener('ready', e => {
