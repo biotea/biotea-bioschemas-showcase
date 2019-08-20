@@ -23,7 +23,15 @@ class BioteaBioschemasShowcase extends HTMLElement  {
     }
 
     get render() {
-        return (this.getAttribute("render"));
+      return this.hasAttribute('render');
+    }
+
+    set render(isRender) {
+      if (isRender) {
+        this.setAttribute('render', '');
+      } else {
+        this.removeAttribute('render');
+      }
     }
 
     get annpath() {
